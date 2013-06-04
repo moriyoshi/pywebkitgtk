@@ -1764,12 +1764,6 @@
   )
 )
 
-(define-method click
-  (of-object "WebKitDOMHTMLButtonElement")
-  (c-name "webkit_dom_html_button_element_click")
-  (return-type "none")
-)
-
 (define-method get_form
   (of-object "WebKitDOMHTMLButtonElement")
   (c-name "webkit_dom_html_button_element_get_form")
@@ -1795,21 +1789,6 @@
   (of-object "WebKitDOMHTMLButtonElement")
   (c-name "webkit_dom_html_button_element_get_validity")
   (return-type "WebKitDOMValidityState*")
-)
-
-(define-method get_access_key
-  (of-object "WebKitDOMHTMLButtonElement")
-  (c-name "webkit_dom_html_button_element_get_access_key")
-  (return-type "gchar*")
-)
-
-(define-method set_access_key
-  (of-object "WebKitDOMHTMLButtonElement")
-  (c-name "webkit_dom_html_button_element_set_access_key")
-  (return-type "none")
-  (parameters
-    '("const-gchar*" "value")
-  )
 )
 
 (define-method get_disabled
@@ -1908,21 +1887,6 @@
 (define-function webkit_dom_html_area_element_get_type
   (c-name "webkit_dom_html_area_element_get_type")
   (return-type "GType")
-)
-
-(define-method get_access_key
-  (of-object "WebKitDOMHTMLAreaElement")
-  (c-name "webkit_dom_html_area_element_get_access_key")
-  (return-type "gchar*")
-)
-
-(define-method set_access_key
-  (of-object "WebKitDOMHTMLAreaElement")
-  (c-name "webkit_dom_html_area_element_set_access_key")
-  (return-type "none")
-  (parameters
-    '("const-gchar*" "value")
-  )
 )
 
 (define-method get_alt
@@ -2083,21 +2047,6 @@
   (return-type "WebKitDOMHTMLFormElement*")
 )
 
-(define-method get_access_key
-  (of-object "WebKitDOMHTMLLegendElement")
-  (c-name "webkit_dom_html_legend_element_get_access_key")
-  (return-type "gchar*")
-)
-
-(define-method set_access_key
-  (of-object "WebKitDOMHTMLLegendElement")
-  (c-name "webkit_dom_html_legend_element_set_access_key")
-  (return-type "none")
-  (parameters
-    '("const-gchar*" "value")
-  )
-)
-
 (define-method get_align
   (of-object "WebKitDOMHTMLLegendElement")
   (c-name "webkit_dom_html_legend_element_get_align")
@@ -2138,7 +2087,6 @@
   (c-name "webkit_dom_html_media_element_load")
   (return-type "none")
   (parameters
-    '("gboolean" "isUserGesture")
     '("GError**" "error")
   )
 )
@@ -2157,7 +2105,6 @@
   (c-name "webkit_dom_html_media_element_play")
   (return-type "none")
   (parameters
-    '("gboolean" "isUserGesture")
   )
 )
 
@@ -2166,7 +2113,6 @@
   (c-name "webkit_dom_html_media_element_pause")
   (return-type "none")
   (parameters
-    '("gboolean" "isUserGesture")
   )
 )
 
@@ -2994,41 +2940,6 @@
 
 ;; -*- scheme -*-
 ; object definitions ...
-(define-object WebKitDOMHTMLBlockquoteElement
-  (in-module "WebKit")
-  (parent "WebKitDOMHTMLElement")
-  (c-name "WebKitDOMHTMLBlockquoteElement")
-  (gtype-id "WEBKIT_TYPE_DOM_HTML_BLOCKQUOTE_ELEMENT")
-)
-
-;; Enumerations and flags ...
-
-
-;; From WebKitDOMHTMLBlockquoteElement.h
-
-(define-function webkit_dom_html_blockquote_element_get_type
-  (c-name "webkit_dom_html_blockquote_element_get_type")
-  (return-type "GType")
-)
-
-(define-method get_cite
-  (of-object "WebKitDOMHTMLBlockquoteElement")
-  (c-name "webkit_dom_html_blockquote_element_get_cite")
-  (return-type "gchar*")
-)
-
-(define-method set_cite
-  (of-object "WebKitDOMHTMLBlockquoteElement")
-  (c-name "webkit_dom_html_blockquote_element_set_cite")
-  (return-type "none")
-  (parameters
-    '("const-gchar*" "value")
-  )
-)
-
-
-;; -*- scheme -*-
-; object definitions ...
 (define-object WebKitDOMHTMLMetaElement
   (in-module "WebKit")
   (parent "WebKitDOMHTMLElement")
@@ -3690,17 +3601,6 @@
   (parameters
     '("WebKitDOMElement*" "element")
     '("const-gchar*" "pseudo_element")
-  )
-)
-
-(define-method get_matched_css_rules
-  (of-object "WebKitDOMDOMWindow")
-  (c-name "webkit_dom_dom_window_get_matched_css_rules")
-  (return-type "WebKitDOMCSSRuleList*")
-  (parameters
-    '("WebKitDOMElement*" "element")
-    '("const-gchar*" "pseudo_element")
-    '("gboolean" "author_only")
   )
 )
 
@@ -4588,7 +4488,6 @@
   (return-type "none")
   (parameters
     '("const-gchar*" "name")
-    '("GError**" "error")
   )
 )
 
@@ -4659,7 +4558,6 @@
   (parameters
     '("const-gchar*" "namespace_uri")
     '("const-gchar*" "local_name")
-    '("GError**" "error")
   )
 )
 
@@ -4730,15 +4628,6 @@
   (return-type "none")
   (parameters
     '("gboolean" "align_with_top")
-  )
-)
-
-(define-method contains
-  (of-object "WebKitDOMElement")
-  (c-name "webkit_dom_element_contains")
-  (return-type "gboolean")
-  (parameters
-    '("WebKitDOMElement*" "element")
   )
 )
 
@@ -6521,6 +6410,7 @@
   (parameters
     '("glong" "start")
     '("glong" "end")
+    '("const-gchar*" "direction")
   )
 )
 
@@ -6549,21 +6439,6 @@
   (of-object "WebKitDOMHTMLTextAreaElement")
   (c-name "webkit_dom_html_text_area_element_get_validity")
   (return-type "WebKitDOMValidityState*")
-)
-
-(define-method get_access_key
-  (of-object "WebKitDOMHTMLTextAreaElement")
-  (c-name "webkit_dom_html_text_area_element_get_access_key")
-  (return-type "gchar*")
-)
-
-(define-method set_access_key
-  (of-object "WebKitDOMHTMLTextAreaElement")
-  (c-name "webkit_dom_html_text_area_element_set_access_key")
-  (return-type "none")
-  (parameters
-    '("const-gchar*" "value")
-  )
 )
 
 (define-method get_cols
@@ -7824,47 +7699,6 @@
 
 ;; -*- scheme -*-
 ; object definitions ...
-(define-object WebKitDOMHTMLIsIndexElement
-  (in-module "WebKit")
-  (parent "WebKitDOMHTMLInputElement")
-  (c-name "WebKitDOMHTMLIsIndexElement")
-  (gtype-id "WEBKIT_TYPE_DOM_HTML_IS_INDEX_ELEMENT")
-)
-
-;; Enumerations and flags ...
-
-
-;; From WebKitDOMHTMLIsIndexElement.h
-
-(define-function webkit_dom_html_is_index_element_get_type
-  (c-name "webkit_dom_html_is_index_element_get_type")
-  (return-type "GType")
-)
-
-(define-method get_form
-  (of-object "WebKitDOMHTMLIsIndexElement")
-  (c-name "webkit_dom_html_is_index_element_get_form")
-  (return-type "WebKitDOMHTMLFormElement*")
-)
-
-(define-method get_prompt
-  (of-object "WebKitDOMHTMLIsIndexElement")
-  (c-name "webkit_dom_html_is_index_element_get_prompt")
-  (return-type "gchar*")
-)
-
-(define-method set_prompt
-  (of-object "WebKitDOMHTMLIsIndexElement")
-  (c-name "webkit_dom_html_is_index_element_set_prompt")
-  (return-type "none")
-  (parameters
-    '("const-gchar*" "value")
-  )
-)
-
-
-;; -*- scheme -*-
-; object definitions ...
 (define-object WebKitDOMHTMLFormElement
   (in-module "WebKit")
   (parent "WebKitDOMHTMLElement")
@@ -8424,15 +8258,6 @@
   (return-type "GType")
 )
 
-(define-method get_parameter
-  (of-object "WebKitDOMLocation")
-  (c-name "webkit_dom_location_get_parameter")
-  (return-type "gchar*")
-  (parameters
-    '("const-gchar*" "name")
-  )
-)
-
 (define-method get_origin
   (of-object "WebKitDOMLocation")
   (c-name "webkit_dom_location_get_origin")
@@ -8736,19 +8561,6 @@
   (c-name "webkit_dom_file_get_name")
   (return-type "gchar*")
 )
-
-(define-method get_file_name
-  (of-object "WebKitDOMFile")
-  (c-name "webkit_dom_file_get_file_name")
-  (return-type "gchar*")
-)
-
-(define-method get_file_size
-  (of-object "WebKitDOMFile")
-  (c-name "webkit_dom_file_get_file_size")
-  (return-type "guint64")
-)
-
 
 ;; -*- scheme -*-
 ; object definitions ...
@@ -9297,13 +9109,6 @@
   (return-type "gboolean")
 )
 
-(define-method get_style
-  (of-object "WebKitDOMAttr")
-  (c-name "webkit_dom_attr_get_style")
-  (return-type "WebKitDOMCSSStyleDeclaration*")
-)
-
-
 ;; -*- scheme -*-
 ; object definitions ...
 (define-object WebKitDOMHTMLBodyElement
@@ -9420,7 +9225,7 @@
   (in-module "WebKit")
   (parent "WebKitDOMHTMLElement")
   (c-name "WebKitDOMHTMLIFrameElement")
-  (gtype-id "WEBKIT_TYPE_DOM_HTMLI_FRAME_ELEMENT")
+  (gtype-id "WEBKIT_TYPE_DOM_HTML_IFRAME_ELEMENT")
 )
 
 ;; Enumerations and flags ...
@@ -9428,20 +9233,20 @@
 
 ;; From WebKitDOMHTMLIFrameElement.h
 
-(define-function webkit_dom_htmli_frame_element_get_type
-  (c-name "webkit_dom_htmli_frame_element_get_type")
+(define-function webkit_dom_html_iframe_element_get_type
+  (c-name "webkit_dom_html_iframe_element_get_type")
   (return-type "GType")
 )
 
 (define-method get_align
   (of-object "WebKitDOMHTMLIFrameElement")
-  (c-name "webkit_dom_htmli_frame_element_get_align")
+  (c-name "webkit_dom_html_iframe_element_get_align")
   (return-type "gchar*")
 )
 
 (define-method set_align
   (of-object "WebKitDOMHTMLIFrameElement")
-  (c-name "webkit_dom_htmli_frame_element_set_align")
+  (c-name "webkit_dom_html_iframe_element_set_align")
   (return-type "none")
   (parameters
     '("const-gchar*" "value")
@@ -9450,13 +9255,13 @@
 
 (define-method get_frame_border
   (of-object "WebKitDOMHTMLIFrameElement")
-  (c-name "webkit_dom_htmli_frame_element_get_frame_border")
+  (c-name "webkit_dom_html_iframe_element_get_frame_border")
   (return-type "gchar*")
 )
 
 (define-method set_frame_border
   (of-object "WebKitDOMHTMLIFrameElement")
-  (c-name "webkit_dom_htmli_frame_element_set_frame_border")
+  (c-name "webkit_dom_html_iframe_element_set_frame_border")
   (return-type "none")
   (parameters
     '("const-gchar*" "value")
@@ -9465,13 +9270,13 @@
 
 (define-method get_height
   (of-object "WebKitDOMHTMLIFrameElement")
-  (c-name "webkit_dom_htmli_frame_element_get_height")
+  (c-name "webkit_dom_html_iframe_element_get_height")
   (return-type "gchar*")
 )
 
 (define-method set_height
   (of-object "WebKitDOMHTMLIFrameElement")
-  (c-name "webkit_dom_htmli_frame_element_set_height")
+  (c-name "webkit_dom_html_iframe_element_set_height")
   (return-type "none")
   (parameters
     '("const-gchar*" "value")
@@ -9480,13 +9285,13 @@
 
 (define-method get_long_desc
   (of-object "WebKitDOMHTMLIFrameElement")
-  (c-name "webkit_dom_htmli_frame_element_get_long_desc")
+  (c-name "webkit_dom_html_iframe_element_get_long_desc")
   (return-type "gchar*")
 )
 
 (define-method set_long_desc
   (of-object "WebKitDOMHTMLIFrameElement")
-  (c-name "webkit_dom_htmli_frame_element_set_long_desc")
+  (c-name "webkit_dom_html_iframe_element_set_long_desc")
   (return-type "none")
   (parameters
     '("const-gchar*" "value")
@@ -9495,13 +9300,13 @@
 
 (define-method get_margin_height
   (of-object "WebKitDOMHTMLIFrameElement")
-  (c-name "webkit_dom_htmli_frame_element_get_margin_height")
+  (c-name "webkit_dom_html_iframe_element_get_margin_height")
   (return-type "gchar*")
 )
 
 (define-method set_margin_height
   (of-object "WebKitDOMHTMLIFrameElement")
-  (c-name "webkit_dom_htmli_frame_element_set_margin_height")
+  (c-name "webkit_dom_html_iframe_element_set_margin_height")
   (return-type "none")
   (parameters
     '("const-gchar*" "value")
@@ -9510,13 +9315,13 @@
 
 (define-method get_margin_width
   (of-object "WebKitDOMHTMLIFrameElement")
-  (c-name "webkit_dom_htmli_frame_element_get_margin_width")
+  (c-name "webkit_dom_html_iframe_element_get_margin_width")
   (return-type "gchar*")
 )
 
 (define-method set_margin_width
   (of-object "WebKitDOMHTMLIFrameElement")
-  (c-name "webkit_dom_htmli_frame_element_set_margin_width")
+  (c-name "webkit_dom_html_iframe_element_set_margin_width")
   (return-type "none")
   (parameters
     '("const-gchar*" "value")
@@ -9525,13 +9330,13 @@
 
 (define-method get_name
   (of-object "WebKitDOMHTMLIFrameElement")
-  (c-name "webkit_dom_htmli_frame_element_get_name")
+  (c-name "webkit_dom_html_iframe_element_get_name")
   (return-type "gchar*")
 )
 
 (define-method set_name
   (of-object "WebKitDOMHTMLIFrameElement")
-  (c-name "webkit_dom_htmli_frame_element_set_name")
+  (c-name "webkit_dom_html_iframe_element_set_name")
   (return-type "none")
   (parameters
     '("const-gchar*" "value")
@@ -9540,13 +9345,13 @@
 
 (define-method get_sandbox
   (of-object "WebKitDOMHTMLIFrameElement")
-  (c-name "webkit_dom_htmli_frame_element_get_sandbox")
+  (c-name "webkit_dom_html_iframe_element_get_sandbox")
   (return-type "gchar*")
 )
 
 (define-method set_sandbox
   (of-object "WebKitDOMHTMLIFrameElement")
-  (c-name "webkit_dom_htmli_frame_element_set_sandbox")
+  (c-name "webkit_dom_html_iframe_element_set_sandbox")
   (return-type "none")
   (parameters
     '("const-gchar*" "value")
@@ -9555,13 +9360,13 @@
 
 (define-method get_scrolling
   (of-object "WebKitDOMHTMLIFrameElement")
-  (c-name "webkit_dom_htmli_frame_element_get_scrolling")
+  (c-name "webkit_dom_html_iframe_element_get_scrolling")
   (return-type "gchar*")
 )
 
 (define-method set_scrolling
   (of-object "WebKitDOMHTMLIFrameElement")
-  (c-name "webkit_dom_htmli_frame_element_set_scrolling")
+  (c-name "webkit_dom_html_iframe_element_set_scrolling")
   (return-type "none")
   (parameters
     '("const-gchar*" "value")
@@ -9570,13 +9375,13 @@
 
 (define-method get_src
   (of-object "WebKitDOMHTMLIFrameElement")
-  (c-name "webkit_dom_htmli_frame_element_get_src")
+  (c-name "webkit_dom_html_iframe_element_get_src")
   (return-type "gchar*")
 )
 
 (define-method set_src
   (of-object "WebKitDOMHTMLIFrameElement")
-  (c-name "webkit_dom_htmli_frame_element_set_src")
+  (c-name "webkit_dom_html_iframe_element_set_src")
   (return-type "none")
   (parameters
     '("const-gchar*" "value")
@@ -9585,13 +9390,13 @@
 
 (define-method get_width
   (of-object "WebKitDOMHTMLIFrameElement")
-  (c-name "webkit_dom_htmli_frame_element_get_width")
+  (c-name "webkit_dom_html_iframe_element_get_width")
   (return-type "gchar*")
 )
 
 (define-method set_width
   (of-object "WebKitDOMHTMLIFrameElement")
-  (c-name "webkit_dom_htmli_frame_element_set_width")
+  (c-name "webkit_dom_html_iframe_element_set_width")
   (return-type "none")
   (parameters
     '("const-gchar*" "value")
@@ -9600,13 +9405,13 @@
 
 (define-method get_content_document
   (of-object "WebKitDOMHTMLIFrameElement")
-  (c-name "webkit_dom_htmli_frame_element_get_content_document")
+  (c-name "webkit_dom_html_iframe_element_get_content_document")
   (return-type "WebKitDOMDocument*")
 )
 
 (define-method get_content_window
   (of-object "WebKitDOMHTMLIFrameElement")
-  (c-name "webkit_dom_htmli_frame_element_get_content_window")
+  (c-name "webkit_dom_html_iframe_element_get_content_window")
   (return-type "WebKitDOMDOMWindow*")
 )
 
@@ -10259,6 +10064,7 @@
   (return-type "none")
   (parameters
     '("const-gchar*" "value")
+    '("GError**" "error")
   )
 )
 
@@ -10437,12 +10243,6 @@
   (return-type "none")
 )
 
-(define-method click
-  (of-object "WebKitDOMHTMLInputElement")
-  (c-name "webkit_dom_html_input_element_click")
-  (return-type "none")
-)
-
 (define-method set_value_for_user
   (of-object "WebKitDOMHTMLInputElement")
   (c-name "webkit_dom_html_input_element_set_value_for_user")
@@ -10518,21 +10318,6 @@
 (define-method set_accept
   (of-object "WebKitDOMHTMLInputElement")
   (c-name "webkit_dom_html_input_element_set_accept")
-  (return-type "none")
-  (parameters
-    '("const-gchar*" "value")
-  )
-)
-
-(define-method get_access_key
-  (of-object "WebKitDOMHTMLInputElement")
-  (c-name "webkit_dom_html_input_element_get_access_key")
-  (return-type "gchar*")
-)
-
-(define-method set_access_key
-  (of-object "WebKitDOMHTMLInputElement")
-  (c-name "webkit_dom_html_input_element_set_access_key")
   (return-type "none")
   (parameters
     '("const-gchar*" "value")
@@ -10847,12 +10632,6 @@
   )
 )
 
-(define-method get_selected_option
-  (of-object "WebKitDOMHTMLInputElement")
-  (c-name "webkit_dom_html_input_element_get_selected_option")
-  (return-type "WebKitDOMHTMLOptionElement*")
-)
-
 (define-method get_will_validate
   (of-object "WebKitDOMHTMLInputElement")
   (c-name "webkit_dom_html_input_element_get_will_validate")
@@ -11130,30 +10909,6 @@
 (define-function webkit_dom_html_anchor_element_get_type
   (c-name "webkit_dom_html_anchor_element_get_type")
   (return-type "GType")
-)
-
-(define-method get_parameter
-  (of-object "WebKitDOMHTMLAnchorElement")
-  (c-name "webkit_dom_html_anchor_element_get_parameter")
-  (return-type "gchar*")
-  (parameters
-    '("const-gchar*" "name")
-  )
-)
-
-(define-method get_access_key
-  (of-object "WebKitDOMHTMLAnchorElement")
-  (c-name "webkit_dom_html_anchor_element_get_access_key")
-  (return-type "gchar*")
-)
-
-(define-method set_access_key
-  (of-object "WebKitDOMHTMLAnchorElement")
-  (c-name "webkit_dom_html_anchor_element_set_access_key")
-  (return-type "none")
-  (parameters
-    '("const-gchar*" "value")
-  )
 )
 
 (define-method get_charset
@@ -11855,21 +11610,6 @@
   (of-object "WebKitDOMHTMLLabelElement")
   (c-name "webkit_dom_html_label_element_get_form")
   (return-type "WebKitDOMHTMLFormElement*")
-)
-
-(define-method get_access_key
-  (of-object "WebKitDOMHTMLLabelElement")
-  (c-name "webkit_dom_html_label_element_get_access_key")
-  (return-type "gchar*")
-)
-
-(define-method set_access_key
-  (of-object "WebKitDOMHTMLLabelElement")
-  (c-name "webkit_dom_html_label_element_set_access_key")
-  (return-type "none")
-  (parameters
-    '("const-gchar*" "value")
-  )
 )
 
 (define-method get_html_for
